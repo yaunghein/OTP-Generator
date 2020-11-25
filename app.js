@@ -18,10 +18,10 @@ const getOTP = (length = 6, option = {}) => {
   };
 
   let update_options = { ...defaultOptions, ...option };
-  let allowChars = (update_options.numbers || "") && numbers;
-  allowChars += (update_options.alphabet || "") && alphabet;
-  allowChars += (update_options.upperCase || "") && upperCase;
-  allowChars += (update_options.specialChars || "") && specialChars;
+  let allowChars = update_options.numbers ? numbers : "";
+  allowChars += update_options.alphabet ? alphabet : "";
+  allowChars += update_options.upperCase ? upperCase : "";
+  allowChars += update_options.specialChars ? specialChars : "";
 
   let OTP = "";
   while (OTP.length < length) {
